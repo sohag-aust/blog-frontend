@@ -6,3 +6,6 @@
 
 # Import Bootstrat
 `import 'bootstrap/dist/css/bootstrap.min.css'` inside `app.js`
+
+# React-Router DOM-6
+`npm install react-router-dom@6`
