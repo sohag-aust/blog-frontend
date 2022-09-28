@@ -4,4 +4,5 @@
 # Install Bootstrap
 `npm install --save bootstrap`
 
-# Import : `import 'bootstrap/dist/css/bootstrap.min.css'` inside `app.js`
+# Import Bootstrat
+`import 'bootstrap/dist/css/bootstrap.min.css'` inside `app.js`
