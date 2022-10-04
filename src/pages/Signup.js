@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { toast } from 'react-toastify';
 import { Button, Card, CardBody, CardHeader, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 import Base from '../components/Base';
+import { signUp } from '../services/userService';
 
 function Signup() {
     const [data, setData] = useState({name: '', email: '', password: '', about: ''});
@@ -49,6 +51,11 @@ function Signup() {
         // data validation
 
         // call server api for sending the data
+        signUp(data).then((res) => {
+            console.log("Response after signup: ", res);
+            toast.success("successfully signedup!!");
+            resetData();
+        }).catch((err) => console.log("error on signup: ", err));
     }
 
     return (
