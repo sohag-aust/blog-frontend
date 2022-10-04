@@ -1,8 +1,56 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button, Card, CardBody, CardHeader, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 import Base from '../components/Base';
 
 function Signup() {
+    const [data, setData] = useState({name: '', email: '', password: '', about: ''});
+    const [error, setError] = useState({errors: {}, isError: false});
+
+    const handleChange = (event) => {
+        // not efficient code
+        // if(event.target.id === "name") {
+        //     setData({
+        //         ...data,
+        //         name: event.target.value
+        //     });
+        // }else if(event.target.id === "email") {
+        //     setData({
+        //         ...data,
+        //         email: event.target.value
+        //     });
+        // }else if(event.target.id === "password") {
+        //     setData({
+        //         ...data,
+        //         password: event.target.value
+        //     });
+        // }else if(event.target.id === "about") {
+        //     setData({
+        //         ...data,
+        //         about: event.target.value
+        //     });
+        // }
+
+        // efficient code
+        setData({
+            ...data,
+            [event.target.id]: event.target.value
+        });
+    }
+
+    const resetData = () => {
+        setData({name: '', email: '', password: '', about: ''});
+    }
+
+    const submitForm = (event) => {
+        event.preventDefault();
+
+        console.log("Form Data: ", data);
+
+        // data validation
+
+        // call server api for sending the data
+    }
+
     return (
         <Base>
             <Container>
@@ -16,7 +64,7 @@ function Signup() {
                             <CardBody>
                                 
                                 {/* creating form */}
-                                <Form>
+                                <Form onSubmit={submitForm}>
 
                                     {/* name field */}
                                     <FormGroup>
@@ -27,6 +75,8 @@ function Signup() {
                                             id="name"
                                             type="text"
                                             placeholder="Enter here"
+                                            onChange={handleChange}
+                                            value={data?.name}
                                         />
                                     </FormGroup>
 
@@ -39,6 +89,8 @@ function Signup() {
                                             id="email"
                                             type="text"
                                             placeholder="Enter here"
+                                            onChange={handleChange}
+                                            value={data?.email}
                                         />
                                     </FormGroup>
 
@@ -51,6 +103,8 @@ function Signup() {
                                             id="password"
                                             type="password"
                                             placeholder="Enter here"
+                                            onChange={handleChange}
+                                            value={data?.password}
                                         />
                                     </FormGroup>
 
@@ -64,12 +118,14 @@ function Signup() {
                                             type="textarea"
                                             placeholder="Enter here"
                                             style={{height: '250px'}}
+                                            onChange={handleChange}
+                                            value={data?.about}
                                         />
                                     </FormGroup>
 
                                     <Container className='text-center'>
-                                        <Button outline color='primary'> Register </Button>
-                                        <Button outline color='danger' className='ms-2' type='reset'> Reset </Button>
+                                        <Button outline color='primary' type='submit'> Register </Button>
+                                        <Button outline color='danger' className='ms-2' type='reset' onClick={resetData}> Reset </Button>
                                     </Container>
 
                                 </Form>
