@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53305a56-acef-4b58-bb35-28618e8cca7c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+    <list default="true" id="53305a56-acef-4b58-bb35-28618e8cca7c" name="Changes" comment="signup api implemented from frontend">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Signup.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,6 +52,7 @@
       <workItem from="1664349380396" duration="148000" />
       <workItem from="1664512885953" duration="2745000" />
       <workItem from="1664860649373" duration="1034000" />
+      <workItem from="1665119066839" duration="681000" />
     </task>
     <task id="LOCAL-00001" summary="setting handler for dynamic value change and handle form submit">
       <created>1664865750522</created>
@@ -94,6 +92,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="completed signup and login component design" />
-    <option name="LAST_COMMIT_MESSAGE" value="completed signup and login component design" />
+    <MESSAGE value="signup api implemented from frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="signup api implemented from frontend" />
   </component>
 </project>

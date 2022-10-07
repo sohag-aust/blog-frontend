@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { toast } from 'react-toastify';
-import { Button, Card, CardBody, CardHeader, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
+import { Button, Card, CardBody, CardHeader, Col, Container, Form, FormFeedback, FormGroup, Input, Label, Row } from 'reactstrap';
 import Base from '../components/Base';
 import { signUp } from '../services/userService';
 
@@ -55,7 +55,15 @@ function Signup() {
             console.log("Response after signup: ", res);
             toast.success("successfully signedup!!");
             resetData();
-        }).catch((err) => console.log("error on signup: ", err));
+        }).catch((err) => {
+            console.log("error on signup: ", err)
+
+            // handle errors
+            setError({
+                errors: err,
+                isError: true
+            })
+        });
     }
 
     return (
@@ -84,7 +92,12 @@ function Signup() {
                                             placeholder="Enter here"
                                             onChange={handleChange}
                                             value={data?.name}
+                                            invalid={error?.errors?.response?.data?.name ? true : false}
                                         />
+
+                                        <FormFeedback>
+                                            { error?.errors?.response?.data?.name }
+                                        </FormFeedback>
                                     </FormGroup>
 
                                     {/* email field */}
@@ -98,7 +111,12 @@ function Signup() {
                                             placeholder="Enter here"
                                             onChange={handleChange}
                                             value={data?.email}
+                                            invalid={error?.errors?.response?.data?.email ? true : false}
                                         />
+
+                                        <FormFeedback>
+                                            { error?.errors?.response?.data?.email }
+                                        </FormFeedback>
                                     </FormGroup>
 
                                     {/* password field */}
@@ -112,7 +130,12 @@ function Signup() {
                                             placeholder="Enter here"
                                             onChange={handleChange}
                                             value={data?.password}
+                                            invalid={error?.errors?.response?.data?.password ? true : false}
                                         />
+
+                                        <FormFeedback>
+                                            { error?.errors?.response?.data?.password }
+                                        </FormFeedback>
                                     </FormGroup>
 
                                     {/* about field */}
@@ -127,7 +150,12 @@ function Signup() {
                                             style={{height: '250px'}}
                                             onChange={handleChange}
                                             value={data?.about}
+                                            invalid={error?.errors?.response?.data?.about ? true : false}
                                         />
+
+                                        <FormFeedback>
+                                            { error?.errors?.response?.data?.about }
+                                        </FormFeedback>
                                     </FormGroup>
 
                                     <Container className='text-center'>
