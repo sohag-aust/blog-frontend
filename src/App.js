@@ -10,6 +10,8 @@ import Signup from './pages/Signup';
 import About from './pages/About';
 import Services from './pages/Services';
 import { ToastContainer } from 'react-toastify';
+import UserDashboard from './pages/UserDashboard';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -21,6 +23,10 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/user" element={<PrivateRoute />} > 
+          <Route path="dashboard" element={<UserDashboard />} />
+        </Route>
+        
       </Routes>
     </BrowserRouter>
   );
