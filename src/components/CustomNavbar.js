@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     Collapse,
     Navbar,
@@ -14,14 +14,34 @@ import {
     NavbarText,
   } from 'reactstrap';
 
-import { NavLink as ReactLink} from "react-router-dom";
+import { NavLink as ReactLink, useNavigate} from "react-router-dom";
+import { doLogout, getCurrentUserDetail, isLoggedIn } from '../auth';
+import { toast } from 'react-toastify';
 
 function CustomNavbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [user, setUser] = useState();
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        setLoggedIn(isLoggedIn());
+        setUser(getCurrentUserDetail());
+    }, [loggedIn]);
 
     const toggle = () => {
         setIsOpen(prev => !prev);
     };
+
+    const logout = () => {
+        doLogout(()=>{
+            toast.success("Logout Successfully");
+            setLoggedIn(prev => !prev);
+
+            navigate("/");
+        });
+    }
 
     return (
         <div>
@@ -30,6 +50,7 @@ function CustomNavbar() {
                 dark
                 expand="md"
                 fixed=""
+                className='px-5'
             >
                 <NavbarBrand tag={ReactLink} to="/">
                     My Blogs
@@ -40,20 +61,20 @@ function CustomNavbar() {
 
                 <Nav className="me-auto" navbar>
                     <NavItem>
+                        <NavLink tag={ReactLink} to="/">
+                            News Feed
+                        </NavLink>
+                    </NavItem>
+
+                    <NavItem>
                         <NavLink tag={ReactLink} to="/about">
                             About
                         </NavLink>
                     </NavItem>
 
                     <NavItem>
-                        <NavLink tag={ReactLink} to="/login">
-                            Login
-                        </NavLink>
-                    </NavItem>
-
-                    <NavItem>
-                        <NavLink tag={ReactLink} to="/signup">
-                            Signup
+                        <NavLink tag={ReactLink} to="/services">
+                            Services
                         </NavLink>
                     </NavItem>
 
@@ -62,16 +83,54 @@ function CustomNavbar() {
                         More
                     </DropdownToggle>
                     <DropdownMenu right>
-                        <DropdownItem tag={ReactLink} to="/services" >
-                            Services
-                        </DropdownItem>
                         <DropdownItem>Contact US</DropdownItem>
                         <DropdownItem divider />
                         <DropdownItem>Youtube</DropdownItem>
                     </DropdownMenu>
                     </UncontrolledDropdown>
                 </Nav>
-                <NavbarText>Shohag</NavbarText>
+
+                <Nav navbar>
+                    {
+                        loggedIn && 
+                            <>
+                                <NavItem>
+                                    <NavLink tag={ReactLink} to="/user/profile-info">
+                                        ProfileInfo
+                                    </NavLink>
+                                </NavItem>
+
+                                <NavbarText tag={ReactLink} to="/user/dashboard">
+                                    {user?.email}
+                                </NavbarText>
+
+                                <NavItem>
+                                    <NavLink onClick={logout}>
+                                        Logout
+                                    </NavLink>
+                                </NavItem>
+                            </>
+                    }
+
+                    {
+                        !loggedIn && 
+                            <>
+                                <NavItem>
+                                    <NavLink tag={ReactLink} to="/login">
+                                        Login
+                                    </NavLink>
+                                </NavItem>
+
+                                <NavItem>
+                                    <NavLink tag={ReactLink} to="/signup">
+                                        Signup
+                                    </NavLink>
+                                </NavItem>
+                            </>
+                    }
+                </Nav>
+
+                {/*  */}
                 </Collapse>
             </Navbar>
         </div>

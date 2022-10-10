@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Button, Card, CardBody, CardHeader, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 import { doLogin } from '../auth';
@@ -8,6 +9,7 @@ import { login } from '../services/userService';
 function Login() {
 
     const [loginDetail, setLoginDetail] = useState({username: '', password: ''});
+    const navigate = useNavigate();
 
     const handleChange = (event, field) => {
         setLoginDetail({
@@ -44,6 +46,7 @@ function Login() {
                 console.log(" login details is saved to localStorage ");
 
                 // redirect to user dashboard page
+                navigate('/user/dashboard');
             });
 
             handleReset();
