@@ -12,6 +12,7 @@ import Services from './pages/Services';
 import { ToastContainer } from 'react-toastify';
 import UserDashboard from './pages/UserDashboard';
 import PrivateRoute from './components/PrivateRoute';
+import ProfileInfo from './pages/ProfileInfo';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/user" element={<PrivateRoute />} > 
           <Route path="dashboard" element={<UserDashboard />} />
+          <Route path="profile-info" element={<ProfileInfo />} />
         </Route>
         
       </Routes>
