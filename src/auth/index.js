@@ -31,3 +31,12 @@ export const getCurrentUserDetail = () => {
         return undefined;
     }
 }
+
+// get TOKEN
+export const getToken = () => {
+    if(isLoggedIn()) {
+        return JSON.parse(localStorage.getItem("data"))?.jwt;
+    } else {
+        return null;
+    }
+}
