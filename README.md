@@ -16,6 +16,9 @@
 # React-Toastify
 `npm install --save react-toastify` && `import 'react-toastify/dist/ReactToastify.css'` inside `app.js`
 
+# Rich-Text Editor
+`npm install jodit-react --save` && `import JoditEditor from 'jodit-react'` inside a component that we need
+
 
 ## Base url: `http://localhost:8095`
 ## Signup url: `/api/v1/auth/register`
