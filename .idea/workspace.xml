@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53305a56-acef-4b58-bb35-28618e8cca7c" name="Changes" comment="save jwt token and userDetails to localStorage">
+    <list default="true" id="53305a56-acef-4b58-bb35-28618e8cca7c" name="Changes" comment="Post form created and Load Categories inside post using API call">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/UserDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UserDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/userService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddPost.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +58,8 @@
       <workItem from="1665119066839" duration="681000" />
       <workItem from="1665135637714" duration="895000" />
       <workItem from="1665372910314" duration="1921000" />
+      <workItem from="1666266134047" duration="889000" />
+      <workItem from="1666340359894" duration="1905000" />
     </task>
     <task id="LOCAL-00001" summary="setting handler for dynamic value change and handle form submit">
       <created>1664865750522</created>
@@ -114,6 +116,7 @@
     <MESSAGE value="signup api implemented from frontend" />
     <MESSAGE value="login feature implemented" />
     <MESSAGE value="Private Route implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Private Route implemented" />
+    <MESSAGE value="Post form created and Load Categories inside post using API call" />
+    <option name="LAST_COMMIT_MESSAGE" value="Post form created and Load Categories inside post using API call" />
   </component>
 </project>
