@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomNavbar from './CustomNavbar';
+import Footer from "../pages/Footer";
 
 function Base({title="Welcome to Blog Application", children}) {
     return (
@@ -8,7 +9,7 @@ function Base({title="Welcome to Blog Application", children}) {
 
                 {children}
                 
-            <h1> This is footer </h1>
+            <Footer />
         </div>
     )
 }

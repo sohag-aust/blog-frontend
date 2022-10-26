@@ -1,12 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Base from '../components/Base';
+import NewsFeed from "../components/NewsFeed";
+import {Container} from "reactstrap";
 
 function Home() {
     return (
         <Base>
-            <div>
-                <h2> This is Home Page </h2>
-            </div>
+            <Container className="mt-4">
+                <NewsFeed />
+            </Container>
         </Base>
     )
 }
