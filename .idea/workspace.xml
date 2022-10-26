@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53305a56-acef-4b58-bb35-28618e8cca7c" name="Changes" comment="create post with axios interceptor with jwtToken">
-      <change beforePath="$PROJECT_DIR$/src/components/Base.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/UserDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UserDashboard.js" afterDir="false" />
+    <list default="true" id="53305a56-acef-4b58-bb35-28618e8cca7c" name="Changes" comment="refactor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NewsFeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsFeed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +66,7 @@
       <workItem from="1666266134047" duration="889000" />
       <workItem from="1666340359894" duration="1905000" />
       <workItem from="1666762497626" duration="3210000" />
+      <workItem from="1666792978487" duration="627000" />
     </task>
     <task id="LOCAL-00001" summary="setting handler for dynamic value change and handle form submit">
       <created>1664865750522</created>
@@ -102,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666790101120</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refactor">
+      <created>1666790349838</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666790349838</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +147,7 @@
     <MESSAGE value="Post form created and Load Categories inside post using API call" />
     <MESSAGE value="create post with axios interceptor with jwtToken" />
     <MESSAGE value="pagination implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="pagination implemented" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
 </project>
