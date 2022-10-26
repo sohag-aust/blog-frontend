@@ -25,7 +25,15 @@ const NewsFeed = () => {
     }, []);
 
     const handleChangePage = (pageNo=0, pageSize=5) => {
+        // for lastPage next
+        if(pageNo > posts?.pageNo && posts?.lastPage) {
+            return ;
+        }
 
+        // for firstPage previous
+        if(pageNo < posts?.pageNo && posts?.pageNo === 0) {
+            return ;
+        }
 
         getAllPosts(pageNo, pageSize)?.then(post => {
             setPosts(post);

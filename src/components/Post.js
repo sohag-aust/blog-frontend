@@ -8,8 +8,7 @@ const Post = ({post}) => {
         <Card className="border-0 shadow-sm mt-4">
             <CardBody>
                 <h3> {post?.title} </h3>
-                <CardText>
-                    <p> {post?.content?.substring(0,20)}... </p>
+                <CardText dangerouslySetInnerHTML={{__html: post?.content?.substring(0,20)}}>
                 </CardText>
 
                 <div>
