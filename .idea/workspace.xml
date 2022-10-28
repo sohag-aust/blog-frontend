@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53305a56-acef-4b58-bb35-28618e8cca7c" name="Changes" comment="refactor">
+    <list default="true" id="53305a56-acef-4b58-bb35-28618e8cca7c" name="Changes" comment="pagination problem fixed and setting html content in post title">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsFeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsFeed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/postService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/postService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="#20,Implementing_Pagination" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,6 +71,7 @@
       <workItem from="1666340359894" duration="1905000" />
       <workItem from="1666762497626" duration="3210000" />
       <workItem from="1666792978487" duration="627000" />
+      <workItem from="1666932400827" duration="7101000" />
     </task>
     <task id="LOCAL-00001" summary="setting handler for dynamic value change and handle form submit">
       <created>1664865750522</created>

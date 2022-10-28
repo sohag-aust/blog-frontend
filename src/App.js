@@ -13,6 +13,7 @@ import { ToastContainer } from 'react-toastify';
 import UserDashboard from './pages/UserDashboard';
 import PrivateRoute from './components/PrivateRoute';
 import ProfileInfo from './pages/ProfileInfo';
+import PostPage from "./pages/PostPage";
 
 function App() {
   return (
@@ -24,11 +25,11 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/user" element={<PrivateRoute />} > 
+        <Route path="/post/:postId" element={<PostPage />} />
+        <Route path="/user" element={<PrivateRoute />} >
           <Route path="dashboard" element={<UserDashboard />} />
           <Route path="profile-info" element={<ProfileInfo />} />
         </Route>
-        
       </Routes>
     </BrowserRouter>
   );
