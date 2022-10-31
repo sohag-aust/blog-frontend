@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53305a56-acef-4b58-bb35-28618e8cca7c" name="Changes" comment="pagination problem fixed and setting html content in post title">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/postService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/postService.js" afterDir="false" />
+    <list default="true" id="53305a56-acef-4b58-bb35-28618e8cca7c" name="Changes" comment="creating post by id page">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/PostPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PostPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="#23,Building_Comments_Section" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,7 +38,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ashraful/Documents/DSi_Projects/info-config-git/infoconfig&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ashraful/Downloads/webclient-vri/webclient&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -71,6 +67,8 @@
       <workItem from="1666762497626" duration="3210000" />
       <workItem from="1666792978487" duration="627000" />
       <workItem from="1666932400827" duration="7101000" />
+      <workItem from="1666951763488" duration="362000" />
+      <workItem from="1667193640949" duration="3308000" />
     </task>
     <task id="LOCAL-00001" summary="setting handler for dynamic value change and handle form submit">
       <created>1664865750522</created>
@@ -152,6 +150,7 @@
     <MESSAGE value="create post with axios interceptor with jwtToken" />
     <MESSAGE value="pagination implemented" />
     <MESSAGE value="refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
+    <MESSAGE value="creating post by id page" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating post by id page" />
   </component>
 </project>
