@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53305a56-acef-4b58-bb35-28618e8cca7c" name="Changes" comment="creating post by id page">
+    <list default="true" id="53305a56-acef-4b58-bb35-28618e8cca7c" name="Changes" comment="infinite pagination implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NewsFeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NewsFeed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ProfileInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ProfileInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Services.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +73,7 @@
       <workItem from="1666932400827" duration="7101000" />
       <workItem from="1666951763488" duration="362000" />
       <workItem from="1667193640949" duration="3308000" />
+      <workItem from="1667220635240" duration="888000" />
     </task>
     <task id="LOCAL-00001" summary="setting handler for dynamic value change and handle form submit">
       <created>1664865750522</created>
