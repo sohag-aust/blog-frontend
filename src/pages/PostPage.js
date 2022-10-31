@@ -1,15 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import Base from "../components/Base";
 import {Link, useParams} from "react-router-dom";
-import {Card, CardBody, CardText, Col, Container, Row} from "reactstrap";
+import {Button, Card, CardBody, CardText, Col, Container, Input, Row} from "reactstrap";
 import {loadPostById} from "../services/postService";
 import {toast} from "react-toastify";
 import moment from 'moment';
 import {BASE_URL} from "../services/helper";
+import {createComment} from "../services/commentService";
+import {isLoggedIn} from "../auth";
 
 const PostPage = () => {
     const {postId} = useParams();
     const [post, setPost] = useState({});
+    const [comment, setComment] = useState({
+        content: ""
+    });
 
     useEffect(() => {
         // load post of postId
@@ -20,6 +25,39 @@ const PostPage = () => {
             toast.error("Error on Fetching post by id !!");
         })
     }, [postId]);
+
+    const handleComment = (event) => {
+        setComment({
+            content: event.target.value
+        });
+    }
+
+    const submitComment = () => {
+
+        if(!isLoggedIn()) {
+            toast.error("Need to Login First !!");
+            return ;
+        }
+
+        createComment(comment, post?.id)?.then(data => {
+            toast.success("Comment added Successfully");
+
+            setComment({
+                content: ""
+            });
+
+            // for immediate update that post with latest comment
+            setPost({
+                ...post,
+                comments: [
+                    ...post?.comments,
+                    data
+                ]
+            });
+        }).catch(err => {
+            toast.error(err);
+        })
+    }
 
     return (
         <Base>
@@ -63,6 +101,42 @@ const PostPage = () => {
                                 </CardText>
                             </CardBody>
                         </Card>
+                    </Col>
+                </Row>
+
+                <Row className="mt-4">
+                    <Col md={{
+                        size: 9,
+                        offset: 1
+                    }}>
+
+                        <h3>No.of Comments ( {post?.comments ? post?.comments?.length : 0} )</h3>
+                        {
+                            post?.comments && post?.comments?.map(comment => (
+                                    <Card className='mt-2' key={comment?.id}>
+                                        <CardBody>
+                                            <CardText>
+                                                {comment?.content}
+                                            </CardText>
+                                        </CardBody>
+                                    </Card>
+                                )
+                            )
+                        }
+
+                        {
+                            isLoggedIn() && <Card className='mt-4'>
+                                <CardBody>
+                                    <Input
+                                        value={comment?.content}
+                                        type="textarea"
+                                        placeholder="Enter comment here"
+                                        onChange={handleComment}
+                                    />
+                                    <Button onClick={submitComment} className="mt-2" color="primary">Submit</Button>
+                                </CardBody>
+                            </Card>
+                        }
                     </Col>
                 </Row>
             </Container>
