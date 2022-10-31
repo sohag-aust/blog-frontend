@@ -3,6 +3,7 @@ import {getAllPosts} from "../services/postService";
 import {toast} from "react-toastify";
 import {Col, Container, Pagination, PaginationItem, PaginationLink, Row} from "reactstrap";
 import Post from "./Post";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const NewsFeed = () => {
 
@@ -15,14 +16,12 @@ const NewsFeed = () => {
         lastPage: false
     });
 
+    const [currentPage, setCurrentPage] = useState(0);
+
     useEffect(() => {
         // load all the posts from server
-        getAllPosts(0, 5)?.then(post => {
-            setPosts(post);
-        }).catch(err => {
-            toast.error("Error Fetching Posts !!");
-        });
-    }, []);
+        handleChangePage(currentPage);
+    }, [currentPage]);
 
     const handleChangePage = (pageNo=0, pageSize=5) => {
         // for lastPage next
@@ -36,11 +35,33 @@ const NewsFeed = () => {
         }
 
         getAllPosts(pageNo, pageSize)?.then(post => {
-            setPosts(post);
-            window.scroll(0,0);
+            console.log("==** loading post: ", post);
+
+            const updatedPosts = [...posts?.content, ...post?.content];
+
+            setPosts({
+                content: [...updatedPosts],
+                totalPages: post?.totalPages,
+                totalElements: post?.totalElements,
+                pageNo: post?.pageNo,
+                pageSize: post?.pageSize,
+                lastPage: post?.lastPage
+            });
+
+
+            // this one for normal pagination
+            // setPosts(post);
+            // window.scroll(0,0);
         }).catch(err => {
             toast.error("Error Fetching Posts !!");
         });
+    }
+
+    const handleChangePageInfinite = () => {
+        console.log("=* Page Changed *=");
+
+        // moving to next page with infinite scroll
+        setCurrentPage(prev => prev + 1);
     }
 
     return (
@@ -53,35 +74,49 @@ const NewsFeed = () => {
                     }}
                 >
                     <h2> Blogs Count : ({posts?.totalElements}) </h2>
-                    {
-                        posts?.content?.map(post => <Post key={post?.id} post={post} />)
-                    }
 
-                    <Container className="text-center mt-3">
-                        <Pagination>
-                            <PaginationItem onClick={() => handleChangePage(posts?.pageNo - 1)} disabled={posts?.pageNo === 0}>
-                                <PaginationLink previous>
+                    {/* infinite scroll instead of pagination */}
+                    <InfiniteScroll next={handleChangePageInfinite}
+                                    hasMore={!posts?.lastPage}
+                                    loader={<h4>Loading...</h4>}
+                                    dataLength={posts?.content?.length}
+                                    endMessage={
+                                        <p style={{ textAlign: 'center' }}>
+                                            <b>Yay! You have seen it all</b>
+                                        </p>
+                                    }
+                    >
+                        {
+                            posts?.content?.map((post, idx) => <Post key={idx} post={post} />)
+                        }
+                    </InfiniteScroll>
 
-                                </PaginationLink>
-                            </PaginationItem>
+                    {/* pagination functionality */}
+                    {/*<Container className="text-center mt-3">*/}
+                    {/*    <Pagination>*/}
+                    {/*        <PaginationItem onClick={() => handleChangePage(posts?.pageNo - 1)} disabled={posts?.pageNo === 0}>*/}
+                    {/*            <PaginationLink previous>*/}
 
-                            {
-                                [...Array(posts?.totalPages)]?.map((item, index) => ( // converting int number to Array for iteration
-                                    <PaginationItem onClick={() => handleChangePage(index)} active={index === posts?.pageNo} key={index}>
-                                        <PaginationLink>
-                                            {index+1}
-                                        </PaginationLink>
-                                    </PaginationItem>
-                                ))
-                            }
+                    {/*            </PaginationLink>*/}
+                    {/*        </PaginationItem>*/}
 
-                            <PaginationItem onClick={() => handleChangePage(posts?.pageNo + 1)} disabled={posts?.lastPage}>
-                                <PaginationLink next>
+                    {/*        {*/}
+                    {/*            [...Array(posts?.totalPages)]?.map((item, index) => ( // converting int number to Array for iteration*/}
+                    {/*                <PaginationItem onClick={() => handleChangePage(index)} active={index === posts?.pageNo} key={index}>*/}
+                    {/*                    <PaginationLink>*/}
+                    {/*                        {index+1}*/}
+                    {/*                    </PaginationLink>*/}
+                    {/*                </PaginationItem>*/}
+                    {/*            ))*/}
+                    {/*        }*/}
 
-                                </PaginationLink>
-                            </PaginationItem>
-                        </Pagination>
-                    </Container>
+                    {/*        <PaginationItem onClick={() => handleChangePage(posts?.pageNo + 1)} disabled={posts?.lastPage}>*/}
+                    {/*            <PaginationLink next>*/}
+
+                    {/*            </PaginationLink>*/}
+                    {/*        </PaginationItem>*/}
+                    {/*    </Pagination>*/}
+                    {/*</Container>*/}
                 </Col>
             </Row>
         </div>

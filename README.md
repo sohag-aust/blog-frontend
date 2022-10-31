@@ -4,7 +4,7 @@
 ## Install Bootstrap
 `npm install --save bootstrap`
 
-## Import Bootstrat
+## Import Bootstrap
 `import 'bootstrap/dist/css/bootstrap.min.css'` inside `app.js`
 
 ## React-Router DOM-6
@@ -21,6 +21,10 @@
 
 ## Moment in ReactJS
 `npm install moment --save` && `import moment from 'moment'` inside a component that we need
+
+## React infinite scroll component 
+    `npm install --save react-infinite-scroll-component`
+     => https://www.npmjs.com/package/react-infinite-scroll-component
 
 ## Free Image Download
 `https://www.pexels.com`
