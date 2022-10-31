@@ -32,3 +32,25 @@
 
 ### Base url: `http://localhost:8095`
 ### Signup url: `/api/v1/auth/register`
+
+### Context API steps:
+    1. const context = createContext(null);
+
+    2. wrap components in Provider
+        <context.Provider value={val}>
+            children
+        </context.Provider>
+    
+    3. consume value by using consumer
+        <context.Consumer>
+            {
+                (value) => (
+                    <div>
+                        {value?.name}
+                    </div>
+                )
+            }
+        </context.Consumer>
+
+    4. consume value using useContext hook
+       const value = useContext(UserContext)
